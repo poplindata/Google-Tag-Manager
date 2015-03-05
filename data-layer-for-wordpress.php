@@ -28,7 +28,7 @@ function injectSPCode() {
     $post_tags = get_the_tags( get_the_ID() );
     $wp_app_ID = get_bloginfo( 'name' );
     $wp_platform = $_SERVER['HTTP_HOST'];
-    $wp_site_profile = $_SERVER['REMOTE_ADDR'] == '14.203.110.26' ? "true" : "false";
+    $wp_site_profile = $_SERVER['REMOTE_ADDR'] == '0.0.0.0' ? "true" : "false";
     $role = $wpdb->prefix . 'capabilities';
     if(is_user_logged_in()) {
         $current_user->role = array_keys($current_user->$role);

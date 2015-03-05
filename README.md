@@ -6,8 +6,9 @@ Simple includes for dataLayer and Google Tag Manager scripts
  * Replace ```XXXXX``` with your GTM ID. 
  
 #### dataLayer
- * Wordpress Template specific schema mapping to dataLayer
+ Wordpress Template specific schema mapping to dataLayer
  
+  * replace line 31 with ```YOUR-IP-address```
  
 #### Layout
 
