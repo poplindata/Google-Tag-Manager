@@ -1,11 +1,11 @@
 <?php
     /*
      * Plugin Name: GTM Code Generator
-     * Plugin URI: http://www.digdeepdigital.com.au
+     * Plugin URI: http://www.snowflake-analytics.com
      * Description:  Inject GTM just after the opening body tag.
-     * Author: Digdeep Digital
+     * Author: Snowflake Analytics
      * Version: 1.1
-     * Author URI: http://www.digdeepdigital.com.au
+     * Author URI: http://www.snowflake-analytics.com
     */
     register_activation_hook(__FILE__, 'gtmcode_activate');
     register_deactivation_hook(__FILE__, 'gtmcode_deactivate');

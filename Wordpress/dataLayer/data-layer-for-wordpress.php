@@ -1,11 +1,11 @@
 <?php
 /*
  * Plugin Name: dataLayer Code Generator
- * Plugin URI: http://www.digdeepdigital.com.au
+ * Plugin URI: http://www.snowflake-analytics.com
  * Description:  Inject SP datalayer in the head.
- * Author: Digdeep Digital
+ * Author: Snowflake Analytics
  * Version: 1.3
- * Author URI: http://www.digdeepdigital.com.au
+ * Author URI: http://www.snowflake-analytics.com
 */
 // Installation and uninstallation hooks
 register_activation_hook(__FILE__, 'spcode_activate');
@@ -40,9 +40,9 @@ function injectSPCode() {
     <!-- dataLayer starts -->
         <script>
             dataLayer = [{
-                <?php 
+                <?php
                 if ( is_front_page() ) {
-                    echo 
+                    echo
                     "'WPtemplateFile': 'post',
                 'WPtemplateDisplay': 'front-page',
                 'WPtemplateDisplayType': 'blog',
@@ -72,24 +72,24 @@ function injectSPCode() {
                         }
                         $formatted_tags = implode( ', ', $formatted_tags );
                     }
-                    echo 
-                    "'WPtemplateFile': 'post', 
-                'WPtemplateDisplay': 'single-post', 
+                    echo
+                    "'WPtemplateFile': 'post',
+                'WPtemplateDisplay': 'single-post',
                 'WPtemplateDisplayType': '" . strtolower( get_post_type( get_the_ID() ) ) . "',
                 'WPtemplateFileName': '" . strtolower( get_the_title() ) . "',
                 'WPtemplateFileId': " . intval(get_the_ID()) . ",
                 'WPpostCategory': '" . $last_category->cat_name . "',
                 'WPpostTags': [" . $formatted_tags . "],
-                'WPpostDate': '" . date( 'Y-m-d', strtotime( $post->post_date ) ) . "', 
+                'WPpostDate': '" . date( 'Y-m-d', strtotime( $post->post_date ) ) . "',
                 'WPpostAuthor': '" . get_the_author_meta( 'user_nicename' , $post->post_author ) . "',
                 'WPappId': '" . $wp_app_ID . "',
                 'WPplatform': '" . $wp_platform . "',
-                'WPsiteProfile': '" . $wp_site_profile . "', 
+                'WPsiteProfile': '" . $wp_site_profile . "',
                 'WPvisitorType': '" . $wp_visitor_type . "'";
                 } else if ( is_page() ) {
-                    echo 
-                    "'WPtemplateFile': 'page', 
-                'WPtemplateDisplay': 'page', 
+                    echo
+                    "'WPtemplateFile': 'page',
+                'WPtemplateDisplay': 'page',
                 'WPtemplateDisplayType': '" . strtolower( $post->post_name ) . "',
                 'WPtemplateFileName': '" . strtolower( get_the_title() ) . "',
                 'WPtemplateFileId': " . intval(get_the_ID()) . ",
@@ -97,7 +97,7 @@ function injectSPCode() {
                 'WPpostAuthor': '" . get_the_author_meta( 'user_nicename' , $post->post_author ) . "',
                 'WPappId': '" . $wp_app_ID . "',
                 'WPplatform': '" . $wp_platform . "',
-                'WPsiteProfile': '" . $wp_site_profile . "', 
+                'WPsiteProfile': '" . $wp_site_profile . "',
                 'WPvisitorType': '" . $wp_visitor_type . "'";
                 } else if ( is_category() ) {
                     echo
@@ -187,7 +187,7 @@ function injectSPCode() {
                 'WPvisitorType': '" . $wp_visitor_type . "'";
                 }
                 ?>
-                
+
             }];
         </script>
     <!-- dataLayer stops -->
