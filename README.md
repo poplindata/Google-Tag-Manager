@@ -8,7 +8,7 @@ Simple includes for dataLayer and Google Tag Manager scripts
 #### dataLayer
  Wordpress Template specific schema mapping to dataLayer
  
-  * replace line 31 with ```YOUR-IP-address```
+  * replace line 34 with ```<my_ip_address>```
  
 #### Layout
 
